@@ -32,8 +32,8 @@ function handleSubmit(e) {
         showToast();
         return;
       } else {
-        hideLoader();
         clearGallery();
+        hideLoader();
         createGallery(images);
       }
     })
