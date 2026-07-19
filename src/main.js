@@ -18,6 +18,7 @@ form.addEventListener('submit', handleSubmit);
 function handleSubmit(e) {
   e.preventDefault();
 
+  clearGallery();
   showLoader();
 
   const query = input.value.trim();
@@ -32,12 +33,14 @@ function handleSubmit(e) {
         showToast();
         return;
       } else {
-        clearGallery();
         hideLoader();
         createGallery(images);
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      hideLoader();
+      showToast();
+    });
 }
 
 function showToast() {

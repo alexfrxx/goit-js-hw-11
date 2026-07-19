@@ -33,12 +33,6 @@ export function createGallery(images) {
 
   galleryList.innerHTML = markup;
 
-  let gallery = new SimpleLightbox('.gallery a', {
-    captions: true,
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-
   gallery.refresh();
 }
 
@@ -53,3 +47,9 @@ export function showLoader() {
 export function hideLoader() {
   loader.classList.remove('load');
 }
+
+let gallery = new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+});
