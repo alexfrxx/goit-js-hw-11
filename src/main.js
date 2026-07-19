@@ -30,6 +30,7 @@ function handleSubmit(e) {
   getImagesByQuery(query)
     .then(images => {
       if (!images.length) {
+        hideLoader();
         showToast();
         return;
       } else {
